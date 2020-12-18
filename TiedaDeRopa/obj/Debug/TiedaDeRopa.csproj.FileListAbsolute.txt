@@ -1,0 +1,10 @@
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\TiedaDeRopa\bin\Debug\TiedaDeRopa.exe.config
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\TiedaDeRopa\bin\Debug\TiedaDeRopa.exe
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\TiedaDeRopa\bin\Debug\TiedaDeRopa.pdb
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\TiedaDeRopa\obj\Debug\TiedaDeRopa.csprojAssemblyReference.cache
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\TiedaDeRopa\obj\Debug\TiedaDeRopa.Form1.resources
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\TiedaDeRopa\obj\Debug\TiedaDeRopa.Properties.Resources.resources
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\TiedaDeRopa\obj\Debug\TiedaDeRopa.csproj.GenerateResource.cache
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\TiedaDeRopa\obj\Debug\TiedaDeRopa.csproj.CoreCompileInputs.cache
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\TiedaDeRopa\obj\Debug\TiedaDeRopa.exe
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\TiedaDeRopa\obj\Debug\TiedaDeRopa.pdb
