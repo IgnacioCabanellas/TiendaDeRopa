@@ -1,0 +1,15 @@
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\Negocio\bin\Debug\Negocio.dll.config
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\Negocio\bin\Debug\Negocio.dll
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\Negocio\bin\Debug\Negocio.pdb
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\Negocio\bin\Debug\Datos.dll
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\Negocio\bin\Debug\EntityFramework.dll
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\Negocio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\Negocio\bin\Debug\Datos.pdb
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\Negocio\bin\Debug\Datos.dll.config
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\Negocio\bin\Debug\EntityFramework.xml
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\Negocio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\Negocio\obj\Debug\Negocio.dll
+C:\Users\nacho\Desktop\NetWorkspace\TiendaDeRopa\TiedaDeRopa\Negocio\obj\Debug\Negocio.pdb

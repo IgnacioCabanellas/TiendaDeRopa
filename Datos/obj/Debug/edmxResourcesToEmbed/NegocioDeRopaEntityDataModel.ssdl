@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NegocioDeRopaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="personas">
+    <Key>
+      <PropertyRef Name="idPersona" />
+    </Key>
+    <Property Name="idPersona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="apellido" Type="varchar" MaxLength="50" />
+    <Property Name="dni" Type="varchar" MaxLength="50" />
+    <Property Name="telefono" Type="varchar" MaxLength="18" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="direccion" Type="varchar" MaxLength="50" />
+    <Property Name="fecha_nacimiento" Type="datetime" />
+  </EntityType>
+  <EntityType Name="productos">
+    <Key>
+      <PropertyRef Name="idProducto" />
+    </Key>
+    <Property Name="idProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" />
+    <Property Name="stock" Type="int" />
+    <Property Name="precio" Type="decimal" Precision="16" Scale="2" />
+    <Property Name="idTipoProducto" Type="int" />
+  </EntityType>
+  <EntityType Name="productos_ventas">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="idVenta" />
+      <PropertyRef Name="idProducto" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idVenta" Type="int" Nullable="false" />
+    <Property Name="idProducto" Type="int" Nullable="false" />
+    <Property Name="precioUnitario" Type="int" />
+    <Property Name="cantidad" Type="int" />
+    <Property Name="porcentaje_descuento" Type="int" />
+    <Property Name="importe" Type="decimal" Precision="16" Scale="2" />
+  </EntityType>
+  <EntityType Name="tipos_productos">
+    <Key>
+      <PropertyRef Name="idTipoProducto" />
+    </Key>
+    <Property Name="idTipoProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tipos_usuarios">
+    <Key>
+      <PropertyRef Name="idTipoUsuario" />
+    </Key>
+    <Property Name="idTipoUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="usuarios">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombreUsuario" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="idPersona" Type="int" />
+    <Property Name="idTipoUsuario" Type="int" />
+  </EntityType>
+  <EntityType Name="ventas">
+    <Key>
+      <PropertyRef Name="idVenta" />
+    </Key>
+    <Property Name="idVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUsuario" Type="int" />
+    <Property Name="total" Type="decimal" Precision="16" Scale="2" />
+  </EntityType>
+  <Association Name="FK_productos_tipos_productos">
+    <End Role="tipos_productos" Type="Self.tipos_productos" Multiplicity="0..1" />
+    <End Role="productos" Type="Self.productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipos_productos">
+        <PropertyRef Name="idTipoProducto" />
+      </Principal>
+      <Dependent Role="productos">
+        <PropertyRef Name="idTipoProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_productos_ventas_productos">
+    <End Role="productos" Type="Self.productos" Multiplicity="1" />
+    <End Role="productos_ventas" Type="Self.productos_ventas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productos">
+        <PropertyRef Name="idProducto" />
+      </Principal>
+      <Dependent Role="productos_ventas">
+        <PropertyRef Name="idProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_productos_ventas_ventas">
+    <End Role="ventas" Type="Self.ventas" Multiplicity="1" />
+    <End Role="productos_ventas" Type="Self.productos_ventas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ventas">
+        <PropertyRef Name="idVenta" />
+      </Principal>
+      <Dependent Role="productos_ventas">
+        <PropertyRef Name="idVenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usuarios_personas">
+    <End Role="personas" Type="Self.personas" Multiplicity="0..1" />
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="personas">
+        <PropertyRef Name="idPersona" />
+      </Principal>
+      <Dependent Role="usuarios">
+        <PropertyRef Name="idPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usuarios_tipos_usuarios">
+    <End Role="tipos_usuarios" Type="Self.tipos_usuarios" Multiplicity="0..1" />
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipos_usuarios">
+        <PropertyRef Name="idTipoUsuario" />
+      </Principal>
+      <Dependent Role="usuarios">
+        <PropertyRef Name="idTipoUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ventas_usuarios">
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="0..1" />
+    <End Role="ventas" Type="Self.ventas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="ventas">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NegocioDeRopaModelStoreContainer">
+    <EntitySet Name="personas" EntityType="Self.personas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="productos" EntityType="Self.productos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="productos_ventas" EntityType="Self.productos_ventas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipos_productos" EntityType="Self.tipos_productos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipos_usuarios" EntityType="Self.tipos_usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ventas" EntityType="Self.ventas" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_productos_tipos_productos" Association="Self.FK_productos_tipos_productos">
+      <End Role="tipos_productos" EntitySet="tipos_productos" />
+      <End Role="productos" EntitySet="productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_productos_ventas_productos" Association="Self.FK_productos_ventas_productos">
+      <End Role="productos" EntitySet="productos" />
+      <End Role="productos_ventas" EntitySet="productos_ventas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_productos_ventas_ventas" Association="Self.FK_productos_ventas_ventas">
+      <End Role="ventas" EntitySet="ventas" />
+      <End Role="productos_ventas" EntitySet="productos_ventas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_usuarios_personas" Association="Self.FK_usuarios_personas">
+      <End Role="personas" EntitySet="personas" />
+      <End Role="usuarios" EntitySet="usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_usuarios_tipos_usuarios" Association="Self.FK_usuarios_tipos_usuarios">
+      <End Role="tipos_usuarios" EntitySet="tipos_usuarios" />
+      <End Role="usuarios" EntitySet="usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ventas_usuarios" Association="Self.FK_ventas_usuarios">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="ventas" EntitySet="ventas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
